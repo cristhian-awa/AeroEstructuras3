@@ -214,19 +214,19 @@ botonesFiltro.forEach(function(boton) {
 // BUSCADOR DE PROYECTOS
 // =============================
 
-const buscadorProyecto = document.getElementById("buscador");
-const botonBuscarProyecto = document.getElementById("boton-buscar");
+const buscadorProyecto = document.querySelector(".buscador-proyectos input");
+const botonBuscarProyecto = document.querySelector(".buscador-proyectos button");
 
 if (buscadorProyecto && botonBuscarProyecto) {
 
-    botonBuscarProyecto.addEventListener("click", function() {
+    botonBuscarProyecto.addEventListener("click", function () {
 
         const texto = buscadorProyecto.value.toLowerCase().trim();
 
-        tarjetasProyecto.forEach(function(tarjeta) {
+        tarjetasProyecto.forEach(function (tarjeta) {
 
             const nombre = tarjeta.querySelector("h3").textContent.toLowerCase();
-            const categoria = tarjeta.getAttribute("data-categoria");
+            const categoria = tarjeta.getAttribute("data-categoria").toLowerCase();
 
             if (
                 texto === "" ||
